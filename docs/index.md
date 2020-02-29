@@ -984,13 +984,13 @@ sudo crontab -e
 Add this line:
 
 ```
-0 0 * * * root systemctl restart kiosk.service
+0 0 * * * systemctl restart kiosk.service
 ```
 
 You can even restart the RPI itself, but in my humble opinion this is unnecessary precaution. But nonetheless, here's how to do it every Sunday:
 
 ```
-0 0 * * 0 root reboot
+0 0 * * 0 reboot
 ```
 
 ### OpenVPN
