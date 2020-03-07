@@ -844,8 +844,10 @@ You can use use both options at the same time. They will not interfere with each
 - Finally run the Chromium browser
 
 ```bash
-/usr/bin/chromium-browser --noerrdialogs --disable-infobars --autoplay-policy=no-user-gesture-required --enable-features=OverlayScrollbar --incognito --kiosk https://<YOUR_DOMAIN>/<YOUR_PAGE>
+/usr/bin/chromium-browser --check-for-update-interval=31536000 --noerrdialogs --disable-infobars --autoplay-policy=no-user-gesture-required --enable-features=OverlayScrollbar --incognito --kiosk https://<YOUR_DOMAIN>/<YOUR_PAGE>
 ```
+
+**--check-for-update-interval=31536000** Increase the update check interval to one year, to prevent the annoying popup to show
 
 **--noerrdialogs** Does not show any error dialogs
 
@@ -885,7 +887,7 @@ ExecStartPre=-/usr/bin/xset -dpms
 ExecStartPre=-/bin/sed -i 's/"exited_cleanly":false/"exited_cleanly":true/' /home/kiosk/.config/chromium/Default/Preferences
 ExecStartPre=-/bin/sed -i 's/"exit_type":"Crashed"/"exit_type":"Normal"/' /home/kiosk/.config/chromium/Default/Preferences
 ExecStartPre=-/bin/bash -c '/usr/bin/unclutter -idle 0.5 -root &'
-ExecStart=/bin/bash -c '/usr/bin/chromium-browser --noerrdialogs --disable-infobars --autoplay-policy=no-user-gesture-required --enable-features=OverlayScrollbar --incognito --kiosk https://ekon.bg/latex/kiosk-praktiker'
+ExecStart=/bin/bash -c '/usr/bin/chromium-browser --check-for-update-interval=31536000 --noerrdialogs --disable-infobars --autoplay-policy=no-user-gesture-required --enable-features=OverlayScrollbar --incognito --kiosk https://ekon.bg/latex/kiosk-praktiker'
 Restart=always
 User=kiosk
 Group=kiosk
@@ -1194,7 +1196,7 @@ nano /home/kiosk/kiosk.sh
 Add this content:
 
 ```bash
-/usr/bin/chromium-browser --noerrdialogs --disable-infobars --autoplay-policy=no-user-gesture-required --enable-features=OverlayScrollbar --incognito --kiosk https://<YOUR_DOMAIN>/<YOUR_PAGE> &
+/usr/bin/chromium-browser --check-for-update-interval=31536000 --noerrdialogs --disable-infobars --autoplay-policy=no-user-gesture-required --enable-features=OverlayScrollbar --incognito --kiosk https://<YOUR_DOMAIN>/<YOUR_PAGE> &
 
 while true; do
    xdotool key --clearmodifiers ctrl+r;
