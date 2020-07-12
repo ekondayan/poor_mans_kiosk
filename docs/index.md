@@ -1279,3 +1279,7 @@ https://www.raspberrypi.org/documentation/configuration/config-txt/README.md
 https://www.raspberrypi.org/documentation/configuration/tcpip/README.md
 
 https://www.instructables.com/id/Rotate-Raspberry-Pi-Display-and-Touchscreen/
+
+## <u>License</u>
+
+This work is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/4.0/.
