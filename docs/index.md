@@ -887,7 +887,7 @@ ExecStartPre=-/usr/bin/xset -dpms
 ExecStartPre=-/bin/sed -i 's/"exited_cleanly":false/"exited_cleanly":true/' /home/kiosk/.config/chromium/Default/Preferences
 ExecStartPre=-/bin/sed -i 's/"exit_type":"Crashed"/"exit_type":"Normal"/' /home/kiosk/.config/chromium/Default/Preferences
 ExecStartPre=-/bin/bash -c '/usr/bin/unclutter -idle 0.5 -root &'
-ExecStart=/bin/bash -c '/usr/bin/chromium-browser --check-for-update-interval=31536000 --noerrdialogs --disable-infobars --autoplay-policy=no-user-gesture-required --enable-features=OverlayScrollbar --incognito --kiosk https://ekon.bg/latex/kiosk-praktiker'
+ExecStart=/bin/bash -c '/usr/bin/chromium-browser --check-for-update-interval=31536000 --noerrdialogs --disable-infobars --autoplay-policy=no-user-gesture-required --enable-features=OverlayScrollbar --incognito --kiosk <REPLACE WITH YOUR URL>'
 Restart=always
 User=kiosk
 Group=kiosk
